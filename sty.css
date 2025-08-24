@@ -1,0 +1,889 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    overflow-x: hidden; 
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff0f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffd6e0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    margin: 1rem auto;
+    max-width: 1100px;
+    box-shadow: 0 6px 12px rgba(255,182,193,0.2);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #ff6f91;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item .nav-link {
+    text-decoration: none;
+    color: #ff6f91;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-item .nav-link:hover {
+    color: #ff3f7f;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: #ff6f91;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('sky.png');
+    background-size: cover;
+    background-position: center;
+     width: 100%;
+    height: 75vh;   
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 25rem;
+    margin-top: 2rem;
+}
+
+.hero-title .highlight {
+    color: #ad505e;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+    margin-left: 13rem;
+}
+
+.hero-buttons a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 15px;
+    transition: transform 0.2s;
+    
+}
+
+.hero-buttons a.primary {
+    background-color: #ff6f91;
+    color: #fff;
+    margin-left: 28rem;
+}
+
+.hero-buttons a.primary:hover {
+    transform: translateY(-3px);
+}
+
+.hero-buttons a.secondary {
+    background-color: #fff;
+    color: #ff6f91;
+     margin-left: 1rem;
+}
+
+.hero-buttons a.secondary:hover {
+    transform: translateY(-3px);
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 1rem;
+}
+
+/* Interactive Section */
+.interactive-section {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffe0eb;
+    border-radius: 25px;
+    box-shadow: 0 6px 15px rgba(255,182,193,0.3);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #ff6f91;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: #ff3f7f;
+}
+
+/* Transport Circles */
+.explore-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.ellipse-container {
+    position: relative;
+}
+
+.ellipse {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ellipse:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255,182,193,0.4);
+}
+
+.ellipse-label {
+    text-align: center;
+    color: #ff6f91;
+}
+
+.ellipse-label i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Transport Info */
+.transport-info {
+    margin-top: 2rem;
+}
+
+.info-content {
+    display: none;
+    background-color: #fff0f5;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #ffccd5;
+    transition: all 0.3s;
+}
+
+.info-content.active {
+    display: block;
+}
+
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #ff6f91;
+}
+
+.info-features {
+    list-style: none;
+}
+
+.info-features li {
+    margin-bottom: 0.5rem;
+}
+
+.info-features li i {
+    color: #ff6f91;
+    margin-right: 0.5rem;
+}
+
+.default-text {
+    font-size: 1rem;
+}
+
+/* Bus Booking Section */
+.booking-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffe0eb;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(255,182,193,0.3);
+    border: 2px solid #ffccd5;
+}
+
+.booking-header h1 {
+    color: #ff6f91;
+    margin-bottom: 0.5rem;
+}
+
+.booking-header p {
+    color: #ff8ba7;
+    margin-bottom: 2rem;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 0.7rem 2rem 0.7rem 0.7rem;
+    border: 2px solid #ffaad0;
+    border-radius: 15px;
+    outline: none;
+}
+
+.input-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6f91;
+}
+
+.swap-button {
+    background: #ffb3c1;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-button {
+    padding: 0.75rem;
+    width: 100%;
+    background: #ff6f91;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-button:hover {
+    background-color: #ff3f7f;
+}
+
+/* Quick Dates */
+.quick-dates {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.date-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ffb3c1;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.date-btn:hover {
+    background-color: #ff6f91;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #ffd6e0;
+        padding: 1rem;
+        border-radius: 15px;
+        position: absolute;
+        top: 70px;
+        right: 2rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+/* Bus Section */
+.Plane-section, .Plane-results-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffe0eb;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(255,182,193,0.3);
+    border: 2px solid #ffccd5;
+}
+
+.Plane-section-button{
+ color: #ff3f7f;
+}
+
+.booking-header h1 {
+    color: #8f8888;
+}
+
+.booking-header p {
+    color: #ff8ba7;
+    margin-bottom: 1.5rem;
+}
+
+.booking-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    padding: 0.7rem 2rem 0.7rem 0.7rem;
+    border: 2px solid #ffaad0;
+    border-radius: 15px;
+    outline: none;
+}
+
+.input-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6f91;
+}
+
+.swap-button {
+    background: #ffb3c1;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search-button {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    width: 100%;
+    background: #ff6f91;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#available-planes-btn:hover {
+    background-color: #ff4d7a; /* Slightly darker pink on hover */
+}
+
+/* Results Frame */
+.results-frame {
+    background: #fff0f5;
+    border-radius: 20px;
+    padding: 1rem;
+    border: 2px dashed #ffaad0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.Plane-card {
+    background: #ffe0eb;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #ffccd5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.Plane-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255,182,193,0.4);
+}
+
+.Plane-card .Plane-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.Plane-card button {
+    background: #ff6f91;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.back-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #ffccd5;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* About Section Frame */
+.about-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6f91;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, #ff6f91, #ff9eb3);
+    border-radius: 2px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 8px rgba(255, 111, 145, 0.5); }
+    to { box-shadow: 0 0 15px rgba(255, 111, 145, 0.8); }
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+}
+
+.team-section {
+    margin-top: 2rem;
+}
+
+.team-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #ff6f91;
+    text-align: center;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.team-caption {
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.member {
+    background: linear-gradient(145deg, #fff0f5, #ffe0eb);
+    padding: 1.8rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff6f91, #ff9eb3, #ffb3c1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.member:hover::before {
+    opacity: 0.1;
+}
+
+.member:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(255, 111, 145, 0.4);
+    border-color: #ff9eb3;
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff6f91, #ff9eb3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.member:hover .member-avatar {
+    transform: rotate(8deg) scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 111, 145, 0.5);
+}
+
+.member-avatar i {
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.member:hover .member-avatar i {
+    transform: scale(1.2);
+}
+
+.member h4 {
+    font-size: 1.1rem;
+    margin: 0.8rem 0 0.3rem;
+    color: #ff3f7f;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.member:hover h4 {
+    color: #ff6f91;
+}
+
+.member-role {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.member:hover .member-role {
+    color: #ff8ba7;
+}
+
+.member-description {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.3s ease;
+}
+
+.member:hover .member-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-section {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 20px;
+    border: 2px dashed rgba(255, 111, 145, 0.3);
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #ff6f91;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+    transition: all 0.3s ease;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.contact-item:hover {
+    background: rgba(255, 111, 145, 0.1);
+    color: #ff3f7f;
+    transform: translateY(-2px);
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #ff6f91;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover i {
+    transform: scale(1.2);
+}
+
+.stats-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.2rem;
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.stat-item:hover {
+    background: rgba(255, 111, 145, 0.2);
+    transform: translateY(-3px);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ff6f91;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+.hero {
+  position: relative; /* already here, perfect */
+  background: url('sky.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;   
+}
+
+.hero {
+  position: relative;
+  background: url('sky.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden; /* prevent plane from pushing layout */
+}
+
+.plane {
+  position: absolute;
+  top: 45%;
+  left: -150px;
+  width: 380px;
+  animation: fly 12s linear infinite;
+  z-index: 5;
+}
+
+@keyframes fly {
+  from { left: -150px; }
+  to { left: 100%; }
+}
+
+.map-container {
+  position: relative;
+  width: 900px;
+  height: 500px;
+  margin: 40px auto;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* static map stays behind plane */
+}
+
+.country {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: rgba(107, 13, 50, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.country:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  font-size: 14px;
+  display: none;
+  pointer-events: none;
+  z-index: 20;
+  min-width: 160px;
+}
+.tooltip strong { font-size: 15px; color: #222; }
+
+
+
