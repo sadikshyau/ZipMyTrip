@@ -10,38 +10,39 @@ hamburger.addEventListener("click", () => {
 const busData = {
     'new york-washington': [
         {
-            name: 'Pink Express 🌸',
+            name: 'Pink Express ',
             type: 'AC Luxury',
             price: 3500,
             duration: '4h 30m',
             departure: '08:00',
             arrival: '12:30',
-            features: ['WiFi 📶', 'Charging Port 🔌', 'Snacks 🍪', 'AC ❄️'],
+            features: ['WiFi ', 'Charging Port ', 'Snacks ', 'AC '],
             category: 'luxury'
         },
         {
-            name: 'Comfort Plus 💕',
+            name: 'Comfort Plus ',
             type: 'AC Seater',
             price: 2800,
             duration: '5h 15m',
             departure: '10:30',
             arrival: '15:45',
-            features: ['WiFi 📶', 'AC ❄️', 'Water 💧'],
+            features: ['WiFi ', 'AC ', 'Water '],
             category: 'ac'
         },
         {
-            name: 'Dreamy Sleeper 🌙',
+            name: 'Dreamy Sleeper ',
             type: 'Sleeper',
             price: 2200,
             duration: '6h 00m',
             departure: '22:00',
             arrival: '04:00+1',
-            features: ['Blanket 🛏️', 'Pillow 🌸', 'AC ❄️'],
+            features: ['Blanket ', 'Pillow ', 'AC '],
             category: 'sleeper'
         }
     ],
     // ... other routes remain unchanged
 };
+
 
 
 // ================= DOM ELEMENTS =================
@@ -111,14 +112,14 @@ function searchBuses(from, to) {
 
 // ================= RANDOM BUS GENERATOR =================
 function generateRandomBuses(from, to) {
-    const busNames = ['Pink Express 🌸', 'Rose Liner 🌹', 'Sakura Runner 🌸', 'Blossom Pro 🌺', 'Cherry Plus 🍒'];
+    const busNames = ['Pink Express ', 'Rose Liner ', 'Sakura Runner ', 'Blossom Pro ', 'Cherry Plus '];
     const busTypes = ['AC Seater', 'Non-AC', 'Sleeper', 'Luxury', 'Semi-Sleeper'];
     const features = [
-        ['WiFi 📶', 'AC ❄️'],
-        ['Charging Port 🔌', 'Water 💧'],
-        ['Blanket 🛏️', 'Pillow 🌸'],
-        ['WiFi 📶', 'Movies 🎬', 'AC ❄️'],
-        ['Basic Seating 🪑']
+        ['WiFi ', 'AC '],
+        ['Charging Port ', 'Water '],
+        ['Blanket ', 'Pillow '],
+        ['WiFi ', 'Movies ', 'AC '],
+        ['Basic Seating ']
     ];
     const categories = ['ac', 'economy', 'sleeper', 'luxury'];
 
@@ -301,3 +302,4 @@ setTimeout(() => {
         fromInput.value = random.from; toInput.value = random.to;
     }
 }, 1000);
+
