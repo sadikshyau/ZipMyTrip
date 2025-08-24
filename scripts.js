@@ -6,44 +6,42 @@ hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
 });
 
-// BUS DATA 
-const busData = {
+// PLANE DATA 
+const PlaneData = {
     'new york-washington': [
         {
-            name: 'Pink Express ',
+            name: 'Pink Sky AIRLINE 🌸',
             type: 'AC Luxury',
-            price: 3500,
+            price: 350000,
             duration: '4h 30m',
             departure: '08:00',
             arrival: '12:30',
-            features: ['WiFi ', 'Charging Port ', 'Snacks ', 'AC '],
+            features: ['WiFi 📶', 'Charging Port 🔌', 'Snacks 🍪', 'AC ❄'],
             category: 'luxury'
         },
         {
-            name: 'Comfort Plus ',
-            type: 'AC Seater',
-            price: 2800,
+            name: 'Fly AIR  💕',
+            type: 'Business',
+            price: 280000,
             duration: '5h 15m',
             departure: '10:30',
             arrival: '15:45',
-            features: ['WiFi ', 'AC ', 'Water '],
-            category: 'ac'
+            features: ['WiFi 📶', 'AC ❄', 'Water 💧'],
+            category: 'Elite'
         },
         {
-            name: 'Dreamy Sleeper ',
+            name: 'Dreamy Sleeper 🌙',
             type: 'Sleeper',
-            price: 2200,
+            price: 22000,
             duration: '6h 00m',
             departure: '22:00',
             arrival: '04:00+1',
-            features: ['Blanket ', 'Pillow ', 'AC '],
+            features: ['Blanket 🛏', 'Pillow 🌸', 'AC ❄'],
             category: 'sleeper'
         }
     ],
     // ... other routes remain unchanged
 };
-
-
 
 // ================= DOM ELEMENTS =================
 const fromInput = document.getElementById('from-input');
@@ -52,7 +50,7 @@ const swapButton = document.getElementById('swap-locations');
 const departureDate = document.getElementById('departure-date');
 const searchBtn = document.getElementById('search-btn');
 const results = document.getElementById('results');
-const busList = document.getElementById('bus-list');
+const PlaneList = document.getElementById('Plane-list');
 const resultsTitle = document.getElementById('results-title');
 const confirmationFrame = document.getElementById('confirmation-frame');
 const successMessage = document.getElementById('success-message');
@@ -97,33 +95,34 @@ searchBtn.addEventListener('click', () => {
         alert('Departure and destination cities cannot be the same');
         return;
     }
-    searchBuses(from, to);
+    searchPlanes(from, to);
 });
 
-function searchBuses(from, to) {
+function searchPlanes(from, to) {
     const routeKey = `${from}-${to}`;
     const reverseRouteKey = `${to}-${from}`;
-    const buses = busData[routeKey] || busData[reverseRouteKey] || generateRandomBuses(from, to);
+    const Planes = PlaneData[routeKey] || PlaneData[reverseRouteKey] || generateRandomPlanes(from, to);
 
-    displayResults(buses, from, to);
-    results.classList.add('active');
+    displayResults(Planes, from, to);
+    results.classLisst.add('active');
     results.scrollIntoView({ behavior: 'smooth' });
 }
 
-// ================= RANDOM BUS GENERATOR =================
-function generateRandomBuses(from, to) {
-    const busNames = ['Pink Express ', 'Rose Liner ', 'Sakura Runner ', 'Blossom Pro ', 'Cherry Plus '];
-    const busTypes = ['AC Seater', 'Non-AC', 'Sleeper', 'Luxury', 'Semi-Sleeper'];
-    const features = [
-        ['WiFi ', 'AC '],
-        ['Charging Port ', 'Water '],
-        ['Blanket ', 'Pillow '],
-        ['WiFi ', 'Movies ', 'AC '],
-        ['Basic Seating ']
-    ];
-    const categories = ['ac', 'economy', 'sleeper', 'luxury'];
 
-    const buses = [];
+// ================= RANDOM PLANE GENERATOR =================
+function generateRandomPlanes(from, to) {
+    const PlaneNames = ['Pink Sky Airline ', 'FLY Air ', 'Cloud chaser ', 'Destinity AirLine ', 'FLY Plus '];
+    const PlaneTypes = ['First-class', 'Business', 'Sleeper', 'Luxury', 'Semi-Sleeper'];
+    const features = [
+        ['WiFi 📶', 'AC ❄'],
+        ['Charging Port 🔌', 'Water 💧'],
+        ['Blanket 🛏', 'Pillow 🌸'],
+        ['WiFi 📶', 'Movies 🎬', 'AC ❄'],
+        ['Basic Seating 🪑']
+    ];
+    const categories = ['Business', 'economy', 'First-class', ];
+
+    const Planes = [];
     const count = Math.floor(Math.random() * 4) + 2;
 
     for (let i = 0; i < count; i++) {
@@ -139,9 +138,9 @@ function generateRandomBuses(from, to) {
         const arrival = `${arrivalTime.getHours().toString().padStart(2, '0')}:${arrivalTime.getMinutes().toString().padStart(2, '0')}`;
         const duration = `${durationHours}h ${durationMinutes}m`;
 
-        buses.push({
-            name: busNames[i % busNames.length],
-            type: busTypes[Math.floor(Math.random() * busTypes.length)],
+        Planes.push({
+            name: PlaneNames[i % PlaneNames.length],
+            type: PlaneTypes[Math.floor(Math.random() * PlaneTypes.length)],
             price: Math.floor(Math.random() * 50) + 20,
             duration,
             departure,
@@ -150,108 +149,83 @@ function generateRandomBuses(from, to) {
             category: categories[Math.floor(Math.random() * categories.length)]
         });
     }
-    return buses;
+    return Planes;
 }
 
 // ================= DISPLAY RESULTS =================
-function displayResults(buses, from, to) {
-    resultsTitle.textContent = `${buses.length} buses found from ${capitalize(from)} to ${capitalize(to)}`;
+function displayResults(Planes, from, to) {
+    resultsTitle.textContent = `${Planes.length}Planes found from ${capitalize(from)} to ${capitalize(to)}`;
 
-    if (buses.length === 0) {
-        busList.innerHTML = `
+    if (Planes.length === 0) {
+        PlaneList.innerHTML = `
             <div class="no-results">
-                <i class="fas fa-bus"></i>
-                <h3>No buses found</h3>
+                <i class="fas fa-Plane"></i>
+                <h3>No Planes found</h3>
                 <p>Try searching for a different route or date</p>
             </div>`;
         return;
     }
 
-    busList.innerHTML = '';
-    buses.forEach((bus, index) => {
-        const busCard = document.createElement('div');
-        busCard.className = 'bus-card';
-        busCard.style.animationDelay = `${index * 0.1}s`;
-        busCard.dataset.category = bus.category;
+   PlaneList.innerHTML = '';
+    Planes.forEach((Plane, index) => {
+        const PlaneCard = document.createElement('div');
+        PlaneCard.className = 'Plane-card';
+        PlaneCard.style.animationDelay = `${index * 0.1}s`;
+        PlaneCard.dataset.category = Plane.category;
 
-        busCard.innerHTML = `
-            <div class="bus-card-header">
-                <div class="bus-info">
-                    <i class="fas fa-bus bus-icon"></i>
-                    <div class="bus-details">
-                        <h4>${bus.name}</h4>
-                        <div class="bus-type"><i class="fas fa-star"></i> <span>${bus.type}</span></div>
+        PlaneCard.innerHTML = `
+            <div class="Plane-card-header">
+                <div class="Plane-info">
+                    <i class="fas fa-Plane Plane-icon"></i>
+                    <div class="Plane-details">
+                        <h4>${Plane.name}</h4>
+                        <div class="Plane-type"><i class="fas fa-star"></i> <span>${Plane.type}</span></div>
                     </div>
                 </div>
                 <div class="price-info">
-                    <div class="price">${bus.price}</div>
+                    <div class="price">${Plane.price}</div>
                     <div class="price-per">per person</div>
                 </div>
             </div>
-            <div class="bus-journey">
+            <div class="Plane-journey">
                 <div class="journey-point">
-                    <div class="journey-time">${bus.departure}</div>
+                    <div class="journey-time">${Plane.departure}</div>
                     <div class="journey-city">${capitalize(from)}</div>
                 </div>
                 <div class="journey-line"></div>
                 <div class="journey-point">
-                    <div class="journey-time">${bus.arrival}</div>
+                    <div class="journey-time">${Plane.arrival}</div>
                     <div class="journey-city">${capitalize(to)}</div>
                 </div>
             </div>
-            <div class="bus-features">
-                ${bus.features.map(feature => `<span class="feature">${feature}</span>`).join('')}
-                <span class="feature">⏱️ ${bus.duration}</span>
+            <div class="Plane-features">
+                ${Plane.features.map(feature => `<span class="feature">${feature}</span>`).join('')}
+                <span class="feature">⏱ ${Plane.duration}</span>
             </div>
-            <button class="book-btn" onclick="bookBus('${bus.name}', '${from}', '${to}', ${bus.price})">
+            <button class="book-btn" onclick="bookPlanePlane('${Plane.name}', '${from}', '${to}', ${Plane.price})">
                 <i class="fas fa-heart"></i> Book Now
             </button>`;
-        busList.appendChild(busCard);
+        PlaneList.appendChild(PlaneCard);
     });
-    setupFilters(buses);
+    setupFilters(Planes);
 }
 
 // ================= FILTER =================
-function setupFilters(buses) {
+function setupFilters(Planes) {
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const filter = btn.dataset.filter;
-            document.querySelectorAll('.bus-card').forEach(card => {
+            document.querySelectorAll('.Plane-card').forEach(card => {
                 card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
             });
         });
     });
 }
 
-// ================= BOOKING MODAL =================
-function bookBus(busName, from, to, price) {
-    document.getElementById('selected-bus').textContent = `Bus: ${busName}`;
-    document.getElementById('selected-route').textContent = `Route: ${capitalize(from)} → ${capitalize(to)}`;
-    document.getElementById('selected-price').textContent = `Price: ${price} per person`;
 
-    overlay.classList.add('active');
-    confirmationFrame.style.display = 'block';
-}
-
-document.getElementById('confirm-btn').addEventListener('click', () => {
-    confirmationFrame.style.display = 'none';
-    overlay.classList.remove('active');
-    successMessage.style.display = 'block';
-    setTimeout(() => successMessage.style.display = 'none', 3000);
-});
-
-document.getElementById('cancel-btn').addEventListener('click', () => {
-    confirmationFrame.style.display = 'none';
-    overlay.classList.remove('active');
-});
-
-overlay.addEventListener('click', () => {
-    confirmationFrame.style.display = 'none';
-    overlay.classList.remove('active');
-});
 
 // ================= AUTOCOMPLETE =================
 function setupAutoComplete(input) {
@@ -295,11 +269,10 @@ document.querySelector('.date-btn[data-offset="0"]').classList.add('active');
 setTimeout(() => {
     if (!fromInput.value && !toInput.value) {
         const samples = [
-           
+            // add sample objects here
         ];
         const random = samples[Math.floor(Math.random() * samples.length)];
-        searchBuses(random.from.toLowerCase(), random.to.toLowerCase());
+        searchPlanes(random.from.toLowerCase(), random.to.toLowerCase());
         fromInput.value = random.from; toInput.value = random.to;
     }
 }, 1000);
-
